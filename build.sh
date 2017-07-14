@@ -7,3 +7,4 @@ git clone https://github.com/torvalds/linux.git
 cp /boot/config* linux/.config
 cd linux
 yes '' | make oldconfig
+make-kpkg -j$(cat /proc/cpuinfo|grep -i bogo|wc -l) binary
