@@ -1,0 +1,7 @@
+language:
+  - generic
+services:
+  - docker
+script:
+  - docker pull debian:sid
+  - docker run --rm --workdir /build -ti -v .:/build debian:sid /build/build.sh
