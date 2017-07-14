@@ -2,7 +2,7 @@
 set -x
 set -e
 apt-get update
-apt-get install --no-install-recommends -y git build-essential kernel-package linux-image-amd64
+apt-get install --no-install-recommends -y ca-certificates git build-essential kernel-package linux-image-amd64
 git clone https://github.com/torvalds/linux.git 
 cp /boot/config* linux/.config
 cd linux
