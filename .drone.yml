@@ -1,0 +1,6 @@
+pipeline:
+  build:
+    image: debian:sid
+    commands:
+      - ./build.sh
+      - ls -lha
