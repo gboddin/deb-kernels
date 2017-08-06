@@ -3,7 +3,7 @@ set -x
 set -e
 apt-get update
 apt-get install --no-install-recommends -y ca-certificates git build-essential kernel-package linux-image-amd64
-git clone https://github.com/torvalds/linux.git 
+wget https://github.com/torvalds/linux/archive/master.tar.gz -O -|tar -xzv
 cp /boot/config* linux/.config
 cd linux
 yes '' | make oldconfig
