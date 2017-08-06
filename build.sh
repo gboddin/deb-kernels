@@ -2,7 +2,7 @@
 set -x
 set -e
 apt-get update
-apt-get install --no-install-recommends -y ca-certificates git build-essential kernel-package linux-image-amd64
+apt-get install --no-install-recommends -y ca-certificates wget build-essential kernel-package linux-image-amd64
 wget https://github.com/torvalds/linux/archive/master.tar.gz -O -|tar -xzv
 cp /boot/config* linux/.config
 cd linux
