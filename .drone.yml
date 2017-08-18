@@ -6,7 +6,7 @@ pipeline:
   github_release:
     image: plugins/github-release
     files:
-      - *.deb 
+      - "*.deb" 
     checksum:
       - md5
       - sha1
