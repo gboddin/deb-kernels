@@ -2,5 +2,16 @@ pipeline:
   build:
     image: debian:sid
     commands:
-      - ./build.sh
-      - ls -lha
+      - ./build.sh ${DRONE_TAG}
+  github_release:
+    image: plugins/github-release
+    files:
+      - *.deb 
+    checksum:
+      - md5
+      - sha1
+      - sha256
+      - sha512
+    secrets: [ GITHUB_RELEASE_API_KEY ]
+    when:
+      event: tag
