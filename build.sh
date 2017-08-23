@@ -10,4 +10,4 @@ mv linux-master linux
 cp /boot/config* linux/.config
 cd linux
 yes '' | make oldconfig
-make-kpkg -j$(cat /proc/cpuinfo|grep -i bogo|wc -l) binary --append-to-version -master --revision ${REVISION} --initrd
+make-kpkg -j$(cat /proc/cpuinfo|grep -i bogo|wc -l) buildpackage modules --append-to-version -master --revision ${REVISION} --initrd
